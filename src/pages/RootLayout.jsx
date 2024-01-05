@@ -4,7 +4,7 @@ function RootLayout() {
   return (
     <div>
       <header>
-        <nav>
+        <nav className="main-nav">
           <NavLink to="/">Home</NavLink>
           <NavLink to="about">About</NavLink>
         </nav>

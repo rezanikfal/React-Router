@@ -15,7 +15,12 @@
 body {
   margin: 20;
   display: block;
-  text-align: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: start;
+  gap: 30px;
 }
