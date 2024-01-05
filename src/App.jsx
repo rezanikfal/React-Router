@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Help from "./pages/Help";
+import PageNotFound from "./pages/PageNotFound";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
         <Route path="contact" element={<Contact />} />
         <Route path="help" element={<Help />} />
       </Route>
+      <Route path="*" element={<PageNotFound />} />
     </Route>
   )
 );
