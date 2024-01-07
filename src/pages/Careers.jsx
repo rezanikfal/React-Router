@@ -15,7 +15,7 @@ function Careers() {
     data.map((el) => {
       return (
         <div key={el.id}>
-          <NavLink to="/">{el.title}</NavLink>
+          <NavLink to={el.id.toString()}>{el.title}</NavLink>
         </div>
       );
     });
