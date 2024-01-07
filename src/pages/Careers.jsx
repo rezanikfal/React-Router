@@ -1,12 +1,14 @@
-import { NavLink } from "react-router-dom";
-import { careerApi } from "../services/careerService";
-import { useState } from "react";
+import { NavLink, useLoaderData } from "react-router-dom";
+// import { careerApi } from "../services/careerService";
+// import { useState } from "react";
 
 function Careers() {
-  const [data, setData] = useState(null);
-  const handleClick = async () => {
-    await careerApi().then((x) => setData(x));
-  };
+  // const [data, setData] = useState(null);
+  // const handleClick = async () => {
+  //   await careerApi().then((x) => setData(x));
+  // };
+
+  const data = useLoaderData();
 
   const renderedData =
     data &&
@@ -22,7 +24,7 @@ function Careers() {
     <div>
       <main>
         <div>Hello</div>
-        <button onClick={handleClick}>Call API</button>
+        {/* <button onClick={handleClick}>Call API</button> */}
         <br />
         {renderedData}
       </main>

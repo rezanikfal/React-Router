@@ -12,6 +12,7 @@ import Help from "./pages/Help";
 import PageNotFound from "./pages/PageNotFound";
 import Careers from "./pages/Careers";
 import CareersLayout from "./pages/CareersLayout";
+import { careerApi } from "./services/careerService";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +23,7 @@ const router = createBrowserRouter(
         <Route path="help" element={<Help />} />
       </Route>
       <Route path="careers" element={<CareersLayout />}>
-        <Route index element={<Careers />} />
+        <Route index element={<Careers />} loader={careerApi} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Route>
