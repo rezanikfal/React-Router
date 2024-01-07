@@ -13,6 +13,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Careers from "./pages/Careers";
 import CareersLayout from "./pages/CareersLayout";
 import { careerApi } from "./services/careerService";
+import CareersDetail from "./pages/CareersDetail";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path="careers" element={<CareersLayout />}>
         <Route index element={<Careers />} loader={careerApi} />
+        <Route path=":id" element={<CareersDetail />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Route>
