@@ -14,6 +14,7 @@ import Careers from "./pages/Careers";
 import CareersLayout from "./pages/CareersLayout";
 import { careerApi, careerApiById } from "./services/careerService";
 import CareersDetail from "./pages/CareersDetail";
+import CareersError from "./pages/CareersError";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +26,12 @@ const router = createBrowserRouter(
       </Route>
       <Route path="careers" element={<CareersLayout />}>
         <Route index element={<Careers />} loader={careerApi} />
-        <Route path=":id" element={<CareersDetail />} loader={careerApiById} />
+        <Route
+          path=":id"
+          element={<CareersDetail />}
+          loader={careerApiById}
+          errorElement={<CareersError />}
+        />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Route>
